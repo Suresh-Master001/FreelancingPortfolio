@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const defaultAchievements = [
-  { value: 50, suffix: '+', label: 'Projects Delivered' },
+  { value: 8, suffix: '+', label: 'Projects Delivered' },
   { value: 99, suffix: '%', label: 'Client Satisfaction Rate' },
   { value: 3, suffix: '+', label: 'Years of Experience' },
   { value: 24, suffix: 'h', label: 'Average Response Time' },

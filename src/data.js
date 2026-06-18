@@ -1,44 +1,26 @@
 import { 
-  ArrowUpRight, 
-  CalendarCheck, 
   CheckCircle2, 
   Code2, 
   Globe2, 
   Mail, 
-  ShieldCheck, 
-  Sparkles, 
   Star,
   Award,
   BriefcaseBusiness,
   Timer,
-  MapPin,
   MessageCircle,
   Bug,
   Rocket,
   Search,
   ClipboardCheck,
   Paintbrush,
-  Box,
-  Cloud,
   Cpu,
   Database,
   ServerCog,
-  ShoppingCart,
   Smartphone,
   Workflow,
-  PenTool,
   Network,
-  BookOpen,
-  GraduationCap,
-  Layers,
   Zap,
-  Quote,
   Users,
-  BarChart3,
-  Headphones,
-  Lightbulb,
-  Target,
-  Settings,
   TrendingUp,
   Lock,
 } from 'lucide-react';
@@ -80,23 +62,7 @@ export const hero = {
     'AI Integration Developer',
     'WooCommerce Developer',
   ],
-  trustBadges: [
-    { icon: Star,         label: 'B.E. Computer Science' },
-    { icon: ShieldCheck,  label: 'JWT Auth & RBAC' },
-    { icon: CheckCircle2, label: 'WordPress & WooCommerce' },
-    { icon: Timer,        label: 'Fast turnaround' },
-  ],
-  stats: [
-    { value: '6+', label: 'Projects Completed',  icon: BriefcaseBusiness },
-    { value: '98%', label: 'Client Satisfaction',  icon: Award },
-    { value: '<3h', label: 'Avg Response Time',    icon: MessageCircle },
-    { value: '8+',  label: 'Technologies',          icon: Code2 },
-  ],
-  socials: [
-    { icon: 'github',   label: 'GitHub',   href: 'https://github.com/Suresh-Master001' },
-    { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/suresh-sundharrajan' },
-    { icon: 'mail',     label: 'Email',    href: 'mailto:suresh2309@proton.me' },
-  ],
+
 };
 
 export const about = {
@@ -244,9 +210,9 @@ export const processSteps = [
 ];
 
 export const stats = [
-  { value: 20, suffix: '+', label: 'Projects Delivered' },
+  { value: 8, suffix: '+', label: 'Projects Delivered' },
   { value: 98, suffix: '%', label: 'Client Satisfaction' },
-  { value: 4,  suffix: 'h', label: 'Avg Response Time' },
+  { value: 3,  suffix: 'h', label: 'Avg Response Time' },
   { value: 8,  suffix: '+', label: 'Technologies' },
 ];
 
@@ -255,7 +221,7 @@ export const projects = [
   {
     title: 'CareerSphereAI — AI Career Operating System',
     type: 'Vite + React · Node.js · Express · MySQL2 (Raw SQL) · Tailwind CSS · Gemini AI · Razorpay · BullMQ',
-    duration: 'Jan 2025 – Present',
+    duration: 'Jun 2026 – Present',
     desc: 'A production-grade full-stack SaaS platform with 6 core modules: Resume Builder with ATS scoring, AI Career Mentor, Skill Engine, Voice Practice, Portfolio Builder, and a B2B College Portal — all routed through a centralized Node.js API gateway with Razorpay billing and BullMQ job queues.',
     built: [
       'Node.js + Express backend with raw MySQL2 (no ORM) — hand-written SQL for all 47+ endpoints across 8 service modules',
@@ -271,7 +237,7 @@ export const projects = [
   {
     title: 'MentorMind — AI-Powered Project Management Tool',
     type: 'MERN Stack · JWT · RBAC · OpenAI API · React · Node.js · MongoDB',
-    duration: 'Sep 2024 – Dec 2024',
+    duration: 'Feb 2026 – Mar 2026',
     desc: 'A fully automated project management platform where AI generates task breakdowns, assigns priorities, tracks progress, and surfaces blockers — all inside a RBAC-secured multi-user workspace.',
     built: [
       'Full RBAC system with Admin, Project Manager, and Developer roles — granular endpoint-level access control via JWT middleware',
@@ -287,7 +253,7 @@ export const projects = [
   {
     title: 'AlphaLegalGPT — RAG-Based Legal Document Assistant',
     type: 'Node.js · Express · Gemini API · LangChain · Pinecone · React · Tailwind CSS',
-    duration: 'Jun 2024 – Sep 2024',
+    duration: 'Mar 2026 – Apr 2026',
     desc: 'An AI-powered legal assistant that lets users upload contracts, NDAs, and legal documents and ask plain-English questions — powered by a RAG pipeline using Gemini API and Pinecone vector search.',
     built: [
       'RAG pipeline with LangChain, Pinecone vector store, and Gemini API — chunks, embeds, and retrieves document context for accurate, citation-grounded answers',
@@ -303,7 +269,7 @@ export const projects = [
   {
     title: 'Codenxte — Web & Software Development Studio',
     type: 'React · Next.js · Tailwind CSS · Three.js · GSAP · Vercel',
-    duration: 'Mar 2024 – Present',
+    duration: 'May 2026 – Present',
     desc: 'The official studio website for Codenxte — a Chennai-based development studio serving startups, SMEs, and students. A 3D dark-themed site with scroll-driven animations, service showcases, pricing, and client acquisition funnels.',
     built: [
       'Three.js 3D hero scene with ambient particle effects and scroll-synced camera movement using GSAP ScrollTrigger',
@@ -314,7 +280,7 @@ export const projects = [
     learned: 'Three.js scene management and GSAP orchestration, technical SEO at infrastructure level (Vercel config, DNS, Search Console), and end-to-end client acquisition systems.',
     githubUrl: 'https://github.com/suresh-s/codenxte',
     liveUrl: 'https://codenxte.com',
-    tags: ['Three.js', 'GSAP', 'Next.js', 'Tailwind', 'SEO', 'Vercel'],
+    tags: ['React', 'Next.js', 'Tailwind', 'SEO', 'Vercel'],
   },
 ];
 
@@ -353,29 +319,6 @@ export const skills = {
   ],
 };
 
-
-export const learningNow = [
-  {
-    topic: 'TypeScript',
-    detail: 'Adding static typing to React and Node.js projects for more reliable, self-documenting code.',
-    icon: Code2,
-  },
-  {
-    topic: 'System Design',
-    detail: 'Scalability patterns, load balancing, message queues, and architecting apps that grow with traffic.',
-    icon: Network,
-  },
-  {
-    topic: 'Docker & CI/CD',
-    detail: 'Containerising Node.js apps and setting up automated deployment pipelines with GitHub Actions.',
-    icon: Box,
-  },
-  {
-    topic: 'Advanced SQL Optimization',
-    detail: 'Indexes, query plans, efficient joins — going deep beyond CRUD with raw MySQL2.',
-    icon: Database,
-  },
-];
 
 export const achievements = [
   {
