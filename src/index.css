@@ -769,7 +769,6 @@
     height: calc(100% - 2.8rem);
     object-fit: cover;
     border-radius: var(--radius-md);
-    z-index: 1;
     pointer-events: none;
   }
 

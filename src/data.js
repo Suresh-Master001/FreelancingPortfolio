@@ -87,9 +87,9 @@ export const hero = {
     { icon: Timer,        label: 'Fast turnaround' },
   ],
   stats: [
-    { value: '20+', label: 'Projects Completed',  icon: BriefcaseBusiness },
+    { value: '6+', label: 'Projects Completed',  icon: BriefcaseBusiness },
     { value: '98%', label: 'Client Satisfaction',  icon: Award },
-    { value: '<4h', label: 'Avg Response Time',    icon: MessageCircle },
+    { value: '<3h', label: 'Avg Response Time',    icon: MessageCircle },
     { value: '8+',  label: 'Technologies',          icon: Code2 },
   ],
   socials: [
