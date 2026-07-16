@@ -4,13 +4,14 @@ import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-scroll';
 
 const navLinks = [
-  { to: 'hero',         label: 'Home'     },
-  { to: 'about',        label: 'About'    },
-  { to: 'services',     label: 'Services' },
-  { to: 'projects',     label: 'Work'     },
-  { to: 'process',      label: 'Process'  },
-  { to: 'testimonials', label: 'Reviews'  },
-  { to: 'contact',      label: 'Contact'  },
+  { to: 'hero',         label: 'Home'      },
+  { to: 'about',        label: 'About'     },
+  { to: 'services',     label: 'Services'  },
+  { to: 'projects',     label: 'Work'      },
+  { to: 'tech-stack',   label: 'Tech Stack'},
+  { to: 'process',      label: 'Process'   },
+  { to: 'testimonials', label: 'Reviews'   },
+  { to: 'contact',      label: 'Contact'   },
 ];
 
 /**

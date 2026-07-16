@@ -42,7 +42,7 @@ export default function TechStack({ techStack: techProp }) {
   };
 
   return (
-    <section ref={ref} className="section-shell">
+    <section id="tech-stack" ref={ref} className="section-shell">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
