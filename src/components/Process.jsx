@@ -61,8 +61,8 @@ export default function Process({ processSteps: stepsProp }) {
             <span className="gradient-text">delivers exceptional results</span>
           </h2>
           <p className="text-[color:var(--text-secondary)] mt-5 max-w-2xl text-lg">
-            Every project follows a battle-tested methodology refined over 20+ successful deliveries.
-            From initial discovery to post-launch optimization, I ensure quality and transparency at every stage.
+            Every project follows a proven methodology refined over 20+ successful deliveries.
+            From initial discovery to post-launch support, I ensure quality and transparency at every stage.
           </p>
         </motion.div>
 

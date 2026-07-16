@@ -36,8 +36,8 @@ export default function Services({ services: servicesProp }) {
             <span className="gradient-text">for serious growth</span>
           </h2>
           <p className="text-[color:var(--text-secondary)] mt-5 max-w-2xl text-lg">
-            From custom WordPress websites to full-stack MERN applications and AI-powered solutions,
-            I deliver production-ready code, clean architecture, and ongoing support to help your business scale.
+            Professional WordPress websites, full-stack MERN applications, SaaS platforms and AI-powered solutions
+            — built for speed, SEO, and real business growth.
           </p>
         </motion.div>
 

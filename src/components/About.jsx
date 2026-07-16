@@ -24,9 +24,9 @@ export default function About({ about }) {
         <motion.div {...fadeUp(0)} className="mb-4">
           <span className="section-kicker">{about?.kicker || 'About Me'}</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight tracking-tight mt-2">
-            <span className="text-[color:var(--text-primary)]">Full Stack Developer </span>
-            <span className="gradient-text">Who Builds Products </span>
-            <span className="text-[color:var(--text-primary)]">That Grow Your Businesses</span>
+            <span className="text-[color:var(--text-primary)]">Full Stack Developer & </span>
+            <span className="gradient-text">AI Integration Specialist</span>
+            <span className="text-[color:var(--text-primary)]"> — Building for Growth</span>
           </h2>
         </motion.div>
 

@@ -144,7 +144,7 @@ export default function Footer({ footer: footerProp }) {
             <div className="footer-bottom-left">
               <span className="footer-dot" aria-hidden="true" />
               <span className="text-xs text-[color:var(--text-tertiary)]">
-                © {new Date().getFullYear()} Codenxte / Suresh S. All rights reserved.
+                © {new Date().getFullYear()} Suresh S — Codenxte. All rights reserved.
               </span>
             </div>
           </div>

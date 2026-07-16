@@ -55,7 +55,7 @@ export default function Testimonials({ testimonials: testimonialsProp }) {
           </h2>
           <p className="text-[color:var(--text-secondary)] mt-4 max-w-2xl mx-auto">
             Real feedback from founders and businesses I've helped grow through technology.
-            Consistent 5-star ratings for code quality, communication, and on-time delivery.
+            Consistently rated 5-stars for code quality, communication, and on-time delivery.
           </p>
         </motion.div>
 

@@ -94,24 +94,24 @@ export default function Hero({ hero: heroProp }) {
               </div>
 
               {/* Stats grid */}
-              <div className="hero-panel-grid">
-                <div className="hero-metric">
-                  <div className="hero-metric-value gradient-text">05 +</div>
-                  <div className="hero-metric-label">Projects Delivered Successfully</div>
+                <div className="hero-panel-grid">
+                  <div className="hero-metric">
+                    <div className="hero-metric-value gradient-text">20 +</div>
+                    <div className="hero-metric-label">Projects Delivered</div>
+                  </div>
+                  <div className="hero-metric">
+                    <div className="hero-metric-value gradient-text">98 %</div>
+                    <div className="hero-metric-label">Client Satisfaction Rate</div>
+                  </div>
+                  <div className="hero-metric">
+                    <div className="hero-metric-value gradient-text">4 h</div>
+                    <div className="hero-metric-label">Avg Response Time</div>
+                  </div>
+                  <div className="hero-metric">
+                    <div className="hero-metric-value gradient-text">8 +</div>
+                    <div className="hero-metric-label">Technologies Mastered</div>
+                  </div>
                 </div>
-                <div className="hero-metric">
-                  <div className="hero-metric-value gradient-text">100 %</div>
-                  <div className="hero-metric-label">Client Satisfaction Rate</div>
-                </div>
-                <div className="hero-metric">
-                  <div className="hero-metric-value gradient-text">3 hrs</div>
-                  <div className="hero-metric-label">Average Response Time</div>
-                </div>
-                <div className="hero-metric">
-                  <div className="hero-metric-value gradient-text">24 / 7</div>
-                  <div className="hero-metric-label">Support & Maintenance</div>
-                </div>
-              </div>
 
               {/* CTA */}
               <div className="hero-panel-cta">

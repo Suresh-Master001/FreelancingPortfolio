@@ -57,7 +57,7 @@ export default function TechStack({ techStack: techProp }) {
           </h2>
           <p className="text-[color:var(--text-secondary)] mt-4 max-w-2xl mx-auto">
             Modern tooling and frameworks that power fast, scalable, and beautiful applications.
-            I specialize in the complete JavaScript ecosystem — from frontend React applications to backend Node.js servers, databases, and AI integrations.
+            From React and Node.js to WordPress and AI APIs — I work across the full stack to deliver complete solutions.
           </p>
         </motion.div>
 
