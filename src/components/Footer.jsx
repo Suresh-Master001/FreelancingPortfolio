@@ -67,7 +67,7 @@ export default function Footer({ footer: footerProp }) {
           {/* Brand column */}
           <div className="md:col-span-4 footer-brand">
             <a href="#hero" className="footer-logo" aria-label="Back to top">
-              <span className="font-display text-2xl font-bold gradient-text">Codenxte</span>
+              <span className="font-display text-2xl font-bold gradient-text">SURESH S</span>
             </a>
             <p className="footer-tagline">
               {footer.tagline || 'Full-stack web & AI product development studio — building digital experiences that convert and scale.'}

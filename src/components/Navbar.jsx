@@ -50,7 +50,7 @@ export default function Navbar({ personalInfo }) {
             <span className="logo-mark" aria-hidden="true">
               <span className="logo-dot" />
             </span>
-            <span className="logo-text font-display">Codenxte</span>
+            <span className="logo-text font-display">SURESH S</span>
           </a>
 
           {/* Desktop links */}
