@@ -1,15 +1,15 @@
+import FloatingBubbles from './components/FloatingBubbles';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import AnimatedBackgroundLite from './components/AnimatedBackgroundLite';
 import About from './components/About';
-import Skills from './components/Skills';
 import Services from './components/Services';
-import Process from './components/Process';
-import StatsBanner from './components/StatsBanner';
 import Portfolio from './components/Portfolio';
+import TechStack from './components/TechStack';
+import Process from './components/Process';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import FloatingContact from './components/FloatingContact';
 
 import {
   personalInfo,
@@ -17,32 +17,37 @@ import {
   about,
   services,
   processSteps,
-  stats,
   projects,
-  skills,
+  techStack,
+  testimonials,
   contact,
   footer,
 } from './data';
 
+/**
+ * App — Main portfolio shell.
+ * Section order: Navbar → Hero → About → Services → Projects → TechStack → Process → Testimonials → Contact → Footer
+ */
 export default function App() {
   return (
     <div className="portfolio-shell">
-      <AnimatedBackgroundLite />
-      <Navbar personalInfo={personalInfo} />
+      {/* Animated floating bubbles background */}
+      <FloatingBubbles />
 
-      <main>
-        <Hero hero={hero} personalInfo={personalInfo} />
-        <StatsBanner stats={stats} />
+      {/* Content layer */}
+      <div className="content-layer">
+        <Navbar personalInfo={personalInfo} />
+        <Hero hero={hero} />
         <About about={about} personalInfo={personalInfo} />
         <Services services={services} />
-        <Process processSteps={processSteps} />
-        <Skills skills={skills} />
         <Portfolio projects={projects} />
+        <TechStack techStack={techStack} />
+        <Process steps={processSteps} />
+        <Testimonials testimonials={testimonials} />
         <Contact contact={contact} />
-      </main>
-
-      <FloatingContact contact={contact} />
-      <Footer footer={footer} />
+        <Footer footer={footer} personalInfo={personalInfo} />
+      </div>
     </div>
   );
 }
+

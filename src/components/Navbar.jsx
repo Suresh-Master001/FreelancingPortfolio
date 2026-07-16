@@ -1,102 +1,158 @@
-import { useEffect, useState } from 'react';
-import { ArrowUpRight, Code2, Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-scroll';
 
-const links = [
-  { label: 'Home', href: '#hero' },
-  { label: 'Services', href: '#services' },
-  { label: 'Projects', href: '#portfolio' },
-  { label: 'Process', href: '#process' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
+const navLinks = [
+  { to: 'hero',         label: 'Home'     },
+  { to: 'about',        label: 'About'    },
+  { to: 'services',     label: 'Services' },
+  { to: 'projects',     label: 'Work'     },
+  { to: 'process',      label: 'Process'  },
+  { to: 'testimonials', label: 'Reviews'  },
+  { to: 'contact',      label: 'Contact'  },
 ];
 
+/**
+ * Navbar — Clean, minimal fixed navbar with glass effect.
+ */
 export default function Navbar({ personalInfo }) {
-  const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState('#hero');
+  const [scrolled,    setScrolled]    = useState(false);
+  const [mobileOpen,  setMobileOpen]  = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 28);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
-    const sections = links.map((link) => document.querySelector(link.href)).filter(Boolean);
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const current = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (current) setActive(`#${current.target.id}`);
-      },
-      { rootMargin: '-24% 0px -56% 0px', threshold: [0.25, 0.5, 0.75] },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    const onResize = () => { if (window.innerWidth >= 768) setMobileOpen(false); };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  const navigate = (href) => {
-    setActive(href);
-    setOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const name = personalInfo?.name || 'Roshini S';
-  const roleTitle = personalInfo?.title || 'Full Stack Developer & Freelancer';
-
   return (
-    <nav className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${scrolled || open ? 'nav-blur' : 'bg-transparent'}`}>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-        <button type="button" onClick={() => navigate('#hero')} className="flex items-center gap-3 text-left" aria-label="Go home">
-          <span className="icon-button h-11 w-11">
-            <Code2 size={20} />
-          </span>
-          <span>
-            <span className="block font-display text-lg font-extrabold text-white">{name}</span>
-            <span className="block text-xs font-bold text-[color:var(--muted)]">{roleTitle}</span>
-          </span>
-        </button>
+    <>
+      <motion.nav
+        role="navigation"
+        aria-label="Main navigation"
+        className="navbar-fixed"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+      >
+        <div className="navbar-inner">
+          {/* Logo */}
+          <a href="#hero" className="navbar-logo" aria-label="Codenxte — go to top">
+            <span className="logo-mark" aria-hidden="true">
+              <span className="logo-dot" />
+            </span>
+            <span className="logo-text font-display">Codenxte</span>
+          </a>
 
-        <ul className="hidden items-center gap-1 xl:flex">
-          {links.map((link) => (
-            <li key={link.href}>
-              <button type="button" onClick={() => navigate(link.href)} className={`nav-link px-4 py-2 text-sm font-bold transition ${active === link.href ? 'is-active' : ''}`}>
+          {/* Desktop links */}
+          <div className="hidden md:flex items-center gap-6" role="list">
+            {navLinks.map(link => (
+              <Link
+                key={link.to}
+                to={link.to}
+                spy={true}
+                smooth={true}
+                offset={-72}
+                duration={700}
+                activeClass="nav-active"
+                className="nav-link"
+                role="listitem"
+              >
                 {link.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex items-center gap-3">
-          <button type="button" onClick={() => navigate('#contact')} className="button-primary hidden text-sm lg:inline-flex">
-            Hire Me
-            <ArrowUpRight size={16} />
-          </button>
-          <button type="button" onClick={() => setOpen((value) => !value)} className="icon-button xl:hidden" aria-label={open ? 'Close menu' : 'Open menu'}>
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
-      </div>
-
-      {open && (
-        <div className="mobile-nav-panel xl:hidden">
-          <div className="mx-auto grid max-w-7xl gap-2 px-5 py-4">
-            {links.map((link) => (
-              <button key={link.href} type="button" onClick={() => navigate(link.href)} className={`nav-link w-full px-4 py-3 text-left text-sm font-bold ${active === link.href ? 'is-active' : ''}`}>
-                {link.label}
-              </button>
+              </Link>
             ))}
-            <button type="button" onClick={() => navigate('#contact')} className="button-primary mt-2 w-full text-sm">
-              Hire Me
-              <ArrowUpRight size={16} />
-            </button>
           </div>
+
+          {/* Desktop right side */}
+          <div className="hidden md:flex items-center gap-3">
+            <a href="#contact" className="btn-primary">
+              Let's Talk
+              <ArrowUpRight size={15} aria-hidden="true" />
+            </a>
+          </div>
+
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMobileOpen(prev => !prev)}
+            className="md:hidden nav-mobile-toggle"
+            aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+          >
+            <AnimatePresence mode="wait">
+              {mobileOpen ? (
+                <motion.span
+                  key="x"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0,  opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <X size={22} aria-hidden="true" />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0,  opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Menu size={22} aria-hidden="true" />
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </button>
         </div>
-      )}
-    </nav>
+
+        {/* Mobile menu drawer */}
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div
+              id="mobile-menu"
+              role="dialog"
+              aria-label="Mobile navigation menu"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="mobile-menu md:hidden"
+            >
+              <div className="mobile-menu-inner">
+                {navLinks.map(link => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    spy={true}
+                    smooth={true}
+                    offset={-72}
+                    duration={700}
+                    onClick={() => setMobileOpen(false)}
+                    activeClass="nav-active"
+                    className="nav-link-mobile"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <div className="mobile-menu-cta">
+                  <a href="#contact" className="btn-primary w-full justify-center">
+                    Let's Talk
+                    <ArrowUpRight size={16} aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
+    </>
   );
 }

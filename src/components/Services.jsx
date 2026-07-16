@@ -1,46 +1,143 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Code2, Globe2, Network, PenTool, ServerCog, ShoppingCart, Smartphone, Workflow } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
-const defaultServices = [
-  { icon: Globe2, title: 'Custom Website Development', desc: 'Premium websites built for brand trust, speed, SEO, and conversion.', points: ['Business websites', 'Landing pages', 'Portfolio sites'] },
-  { icon: Code2, title: 'MERN Stack Development', desc: 'Full-stack applications with modern frontend, APIs, auth, and databases.', points: ['React apps', 'Node APIs', 'MongoDB'] },
-  { icon: ShoppingCart, title: 'E-Commerce Solutions', desc: 'Online stores with product flows, payments, dashboards, and automation.', points: ['Checkout flows', 'Admin panels', 'Inventory logic'] },
-  { icon: ServerCog, title: 'SaaS Applications', desc: 'Subscription-ready platforms with scalable architecture and clean UX.', points: ['Multi-user apps', 'Role systems', 'Analytics'] },
-  { icon: Smartphone, title: 'Mobile App Development', desc: 'Mobile-first app experiences and responsive product interfaces.', points: ['PWA builds', 'App screens', 'User flows'] },
-  { icon: Network, title: 'API Integration', desc: 'Reliable integrations for payment, CRM, analytics, email, and third-party tools.', points: ['REST APIs', 'Webhooks', 'Automation'] },
-  { icon: Workflow, title: 'Business Automation Software', desc: 'Custom tools that reduce manual work and improve operations.', points: ['Dashboards', 'Internal tools', 'Workflows'] },
-  { icon: PenTool, title: 'UI/UX Design', desc: 'Modern interfaces designed for clarity, confidence, and better conversion.', points: ['Wireframes', 'Design systems', 'Prototype-ready UI'] },
+// Per-service accent colors and gradient overlays for the header area
+const serviceThemes = [
+  { num: '01', accent: '#4db8ff', glow: 'rgba(77,184,255,0.15)',  gradient: 'from-blue-500/10 to-transparent' },
+  { num: '02', accent: '#00f5d4', glow: 'rgba(0,245,212,0.15)',   gradient: 'from-cyan-400/10 to-transparent' },
+  { num: '03', accent: '#8b5cf6', glow: 'rgba(139,92,246,0.15)',  gradient: 'from-violet-500/10 to-transparent' },
+  { num: '04', accent: '#f472b6', glow: 'rgba(244,114,182,0.15)', gradient: 'from-pink-400/10 to-transparent' },
 ];
 
+/**
+ * Services — 2×2 grid of premium numbered service cards.
+ * Each card has a large decorative number, animated icon, point list, and CTA.
+ */
 export default function Services({ services: servicesProp }) {
   const { ref, inView } = useInView({ threshold: 0.08, triggerOnce: true });
-  const services = servicesProp || defaultServices;
+  const services = servicesProp || [];
 
   return (
     <section id="services" ref={ref} className="section-shell">
       <div className="section-container">
-        <motion.div initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55 }} className="section-header">
+
+        {/* ── Header ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
           <span className="section-kicker">Services</span>
-          <h2 className="section-title">Premium software services for serious business growth.</h2>
-          <p className="section-copy">Every service is designed to help you launch faster, convert better, and operate with fewer bottlenecks.</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight tracking-tight mt-2">
+            <span className="text-[color:var(--text-primary)]">Premium software services</span>
+            <br />
+            <span className="gradient-text">for serious growth</span>
+          </h2>
+          <p className="text-[color:var(--text-secondary)] mt-5 max-w-2xl text-lg">
+            From custom WordPress websites to full-stack MERN applications and AI-powered solutions,
+            I deliver production-ready code, clean architecture, and ongoing support to help your business scale.
+          </p>
         </motion.div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {services.map((service, index) => (
-            <motion.article key={service.title} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: index * 0.05 }} className="premium-card service-card">
-              <div className="service-icon mb-5">
-                <service.icon size={22} />
-              </div>
-              <h3 className="font-display text-lg font-extrabold text-white">{service.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-[color:var(--muted)]">{service.desc}</p>
-              <ul className="service-list">
-                {service.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </motion.article>
-          ))}
+        {/* ── Services grid ── */}
+        <div className="grid md:grid-cols-2 gap-5">
+          {services.map((service, i) => {
+            const Icon  = service.icon;
+            const theme = serviceThemes[i % serviceThemes.length];
+
+            return (
+              <motion.article
+                key={service.title}
+                initial={{ opacity: 0, y: 48 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.55, delay: i * 0.1 }}
+                className="glass-card glass-card-glow group relative overflow-hidden p-7 flex flex-col cursor-default"
+                style={{ '--card-accent': theme.accent }}
+              >
+                {/* Decorative corner number */}
+                <span className="service-number" aria-hidden="true">{theme.num}</span>
+
+                {/* Accent gradient top strip */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-0.5 rounded-t-lg transition-opacity duration-300 opacity-40 group-hover:opacity-100"
+                  style={{ background: `linear-gradient(90deg, ${theme.accent}, transparent)` }}
+                  aria-hidden="true"
+                />
+
+                {/* Icon */}
+                <div
+                  className="service-icon-wrapper"
+                  style={{
+                    '--tw-shadow-color': theme.glow,
+                    color: theme.accent,
+                    borderColor: `${theme.accent}28`,
+                    background: `${theme.accent}0d`,
+                  }}
+                  aria-hidden="true"
+                >
+                  <Icon size={22} />
+                </div>
+
+                {/* Number label */}
+                <span
+                  className="text-xs font-bold tracking-widest mb-2 font-display"
+                  style={{ color: theme.accent, opacity: 0.7 }}
+                >
+                  {theme.num}
+                </span>
+
+                {/* Title */}
+                <h3 className="font-display text-xl font-bold text-[color:var(--text-primary)] mb-3 group-hover:text-white transition-colors">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-[color:var(--text-secondary)] text-sm leading-relaxed mb-5 flex-grow">
+                  {service.desc}
+                </p>
+
+                {/* Additional value props */}
+                <ul className="flex flex-col gap-2 mb-2">
+                  <li className="flex items-start gap-2 text-xs text-[color:var(--text-secondary)]">
+                    <span className="text-[color:var(--accent-cyan)] mt-0.5">✓</span>
+                    <span>Performance-optimized & SEO-friendly</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-[color:var(--text-secondary)]">
+                    <span className="text-[color:var(--accent-cyan)] mt-0.5">✓</span>
+                    <span>Responsive across all devices</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-[color:var(--text-secondary)]">
+                    <span className="text-[color:var(--accent-cyan)] mt-0.5">✓</span>
+                    <span>Post-launch support & maintenance</span>
+                  </li>
+                </ul>
+
+                {/* Points */}
+                <ul className="flex flex-wrap gap-2 mt-auto" aria-label={`${service.title} capabilities`}>
+                  {service.points?.map(point => (
+                    <li
+                      key={point}
+                      className="tag tag-default"
+                    >
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Hover CTA */}
+                <div
+                  className="flex items-center gap-1.5 mt-5 text-sm font-semibold font-display opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0"
+                  style={{ color: theme.accent }}
+                  aria-hidden="true"
+                >
+                  Learn more
+                  <ArrowUpRight size={16} />
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>
