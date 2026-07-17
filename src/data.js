@@ -217,15 +217,6 @@ export const projects = [
   },
 ];
 
-export const techStack = [
-  { name: 'React',         icon: Code2 },
-  { name: 'Node.js',       icon: ServerCog },
-  { name: 'MongoDB',       icon: Database },
-  { name: 'Tailwind',      icon: Paintbrush },
-  { name: 'Gemini AI',     icon: Brain },
-  { name: 'OpenAI',        icon: Cpu },
-];
-
 // TechStack visual helpers (must live in data.js)
 export const techStackDots = {
   'React':          '#61dafb',
