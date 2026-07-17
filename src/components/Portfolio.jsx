@@ -56,7 +56,7 @@ export default function Portfolio({ projects: projectsProp }) {
             <span className="gradient-text">digital products built to scale</span>
           </h2>
           <p className="text-[color:var(--text-secondary)] mt-5 max-w-2xl text-lg">
-            Each project solves a real problem with clean code, thoughtful UX, and tech that scales.
+            Each project solves a real problem with clean code, thoughtful UX and tech that scales.
             From AI-powered platforms to full-stack SaaS applications, I deliver solutions built for real business value.
           </p>
         </motion.div>

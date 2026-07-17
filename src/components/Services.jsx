@@ -37,7 +37,7 @@ export default function Services({ services: servicesProp }) {
           </h2>
           <p className="text-[color:var(--text-secondary)] mt-5 max-w-2xl text-lg">
             Professional WordPress websites, full-stack MERN applications, SaaS platforms and AI-powered solutions
-            — built for speed, SEO, and real business growth.
+            - built for speed, SEO and real business growth.
           </p>
         </motion.div>
 

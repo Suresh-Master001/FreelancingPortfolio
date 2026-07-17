@@ -2,6 +2,7 @@ import {
   Code2, 
   Globe2, 
   Mail, 
+  MessageCircle,
   Bug,
   Rocket,
   Search,
@@ -14,13 +15,12 @@ import {
   TrendingUp,
   Brain,
   Layers,
-  MessageCircle,
 } from 'lucide-react';
 
 export const personalInfo = {
   name: 'Suresh S',
   title: 'Freelance Full Stack Developer',
-  subtitle: 'MERN, SaaS, AI Integration, WordPress',
+  subtitle: 'MERN, SaaS, AI Integration',
   location: 'Chennai, Tamil Nadu',
   locationDetail: 'Chennai, Tamil Nadu · Available for remote freelance & full-time',
   email: 'suresh2309@proton.me',
@@ -33,7 +33,7 @@ export const personalInfo = {
   website: 'codenxte.com',
   websiteUrl: 'https://codenxte.com',
   resumeUrl: '#',
-  freelanceTagline: 'Available for freelance - WordPress, MERN stack, SaaS platforms & AI integrations',
+  freelanceTagline: 'Available for freelance - MERN stack, SaaS platforms & AI integrations',
   completionRate: '98%',
   responseTime: '< 4 hours',
   projectsDelivered: '20+',
@@ -41,36 +41,35 @@ export const personalInfo = {
 
 export const hero = {
   kicker: 'Available for freelance & full-time roles',
-  title: 'Building Modern Websites &',
+  title: 'Building Modern SaaS &',
   titleHighlight: 'AI-Powered Solutions',
-  tagline: 'Freelance full-stack & AI product developer. Specializing in MERN stack applications, WordPress websites, SaaS platforms and AI integrations that help brands grow online.',
+  tagline: 'Freelance full-stack & AI product developer. Specializing in MERN stack applications, SaaS platforms and AI/RAG integrations that help brands grow online.',
   roles: [
     'Full Stack Developer',
-    'WordPress Developer',
     'MERN Stack Developer',
     'SaaS Developer',
     'React.js Developer',
     'Node.js Developer',
     'AI Integration Developer',
-    'WooCommerce Developer',
+    'RAG / LLM Developer',
   ],
 };
 
 export const about = {
   kicker: 'About Me',
-  title: 'Full Stack Developer & WordPress Expert Who Builds Websites That Grow Businesses',
-  bio: `Hi, I'm Suresh S - a passionate Full Stack Developer and Freelance Web Developer based in Chennai, India. I help startups, entrepreneurs and businesses transform ideas into high-performing digital products that are fast, scalable and user-friendly.
+  title: 'Full Stack & AI Developer Who Builds Products That Grow Businesses',
+  bio: `Hi, I'm Suresh S - a passionate Full Stack Developer and Freelance Software Developer based in Chennai, India. I help startups, entrepreneurs and businesses transform ideas into high-performing digital products that are fast, scalable and user-friendly.
 
-I specialize in MERN Stack Development, WordPress Development, SaaS Applications, API Integrations and AI-Powered Solutions. From modern business websites and eCommerce stores to custom dashboards and full-stack applications, I deliver solutions designed for performance, SEO and long-term growth.
+I specialize in MERN Stack Development, SaaS Applications, API Integrations and AI-Powered Solutions. From custom dashboards and multi-tenant platforms to full-stack applications and AI/RAG pipelines, I deliver solutions designed for performance, reliability and long-term growth.
 
-Whether you need a professional WordPress website, a custom MERN stack application or a complete SaaS platform - I focus on building solutions that not only look great but also deliver real business value.
+Whether you need a custom MERN stack application, a complete SaaS platform or an AI-powered assistant - I focus on building solutions that not only work well but also deliver real business value.
 
 Let's turn your ideas into powerful digital experiences.`,
   credibility: [
-    { icon: Globe2,       label: 'WordPress, Elementor & WooCommerce development' },
     { icon: Code2,        label: 'MERN stack - React, Node, Express, MongoDB, MySQL' },
-    { icon: Cpu,          label: 'AI/RAG integrations - Gemini, OpenAI, LangChain' },
-    { icon: TrendingUp,   label: 'SEO-friendly, performance & conversion focused' },
+    { icon: Layers,       label: 'Multi-tenant SaaS - RBAC, billing, admin dashboards' },
+    { icon: Cpu,          label: 'AI/RAG integrations - Gemini, OpenAI, LangChain, Pinecone' },
+    { icon: TrendingUp,   label: 'Performance, security & conversion focused' },
   ],
   stats: [
     { value: 20, suffix: '+', label: 'Projects Delivered' },
@@ -82,28 +81,28 @@ Let's turn your ideas into powerful digital experiences.`,
 
 export const services = [
   {
-    icon: Globe2,
-    title: 'WordPress Development',
-    desc: 'Professional WordPress websites built for speed, SEO and conversions - from business sites to full eCommerce stores.',
-    points: ['Business Websites', 'WooCommerce Stores', 'Elementor Customization', 'SEO Optimization'],
-  },
-  {
     icon: Code2,
     title: 'Full Stack Development',
     desc: 'End-to-end web applications with React frontends, Node.js backends and scalable database architectures.',
-    points: ['React Applications', 'Node.js APIs', 'MongoDB/MySQL', 'JWT Authentication'],
-  },
-  {
-    icon: Cpu,
-    title: 'AI Integration',
-    desc: 'Seamlessly integrate AI into your product - chatbots, document QA, RAG pipelines and intelligent automation.',
-    points: ['OpenAI & Gemini APIs', 'AI Chatbots', 'RAG Applications', 'Workflow Automation'],
+    points: ['React Applications', 'Node.js APIs', 'MongoDB/MySQL', 'JWT & RBAC Authentication'],
   },
   {
     icon: Layers,
     title: 'SaaS MVP Build',
     desc: 'Launch-ready SaaS platforms with subscription billing, multi-tenant architecture and admin dashboards.',
-    points: ['Multi-Tenant Apps', 'Subscription Systems', 'Admin Panels', 'Payment Integration'],
+    points: ['Multi-Tenant Apps', 'Subscription Systems (Razorpay)', 'Admin Panels', 'Analytics & Reporting'],
+  },
+  {
+    icon: Cpu,
+    title: 'AI Integration',
+    desc: 'Seamlessly integrate AI into your product - chatbots, document QA, RAG pipelines and intelligent automation.',
+    points: ['OpenAI & Gemini APIs', 'AI Chatbots', 'RAG Applications (LangChain, Pinecone)', 'Workflow Automation'],
+  },
+  {
+    icon: ServerCog,
+    title: 'API & Backend Engineering',
+    desc: 'Robust, well-documented backend systems with real-time features and background job processing.',
+    points: ['REST API Design', 'Socket.io Real-Time Features', 'Redis / BullMQ Queues', 'Raw SQL & Query Optimization'],
   },
 ];
 
@@ -117,7 +116,7 @@ export const processSteps = [
     bullets: [
       'Stakeholder interview + requirements mapping',
       'Scope, risks, timeline and feature priorities',
-      'Technical direction (WordPress vs MERN) aligned with goals',
+      'Technical direction (MERN vs SaaS architecture) aligned with goals',
     ],
   },
   {
@@ -135,13 +134,13 @@ export const processSteps = [
   {
     icon: Code2,
     title: 'Build',
-    desc: 'Develop your project using the best-fit stack - WordPress or MERN - with clean code practices.',
+    desc: 'Develop your project using the MERN stack with clean, maintainable code practices.',
     timeframe: 'Week 2-4',
     deliverable: 'Working product (MVP-ready)',
     bullets: [
       'Frontend + backend implementation with best practices',
       'API integration, authentication and data modeling',
-      'Performance, SEO and maintainability baked-in from day one',
+      'Performance, security and maintainability baked-in from day one',
     ],
   },
   {
@@ -152,7 +151,7 @@ export const processSteps = [
     deliverable: 'Quality checks + fixes',
     bullets: [
       'Functional checks, edge cases and regression testing',
-      'Lighthouse/performance tuning and security validation',
+      'Performance tuning and security validation',
       'Cross-browser QA + final polish',
     ],
   },
@@ -218,49 +217,44 @@ export const projects = [
   },
 ];
 
-// TechStack — main array of technologies with icons
 export const techStack = [
   { name: 'React',        icon: Code2 },
   { name: 'Node.js',      icon: ServerCog },
   { name: 'MongoDB',      icon: Database },
-  { name: 'Tailwind',     icon: Paintbrush },
-  { name: 'Gemini AI',    icon: Brain },
-  { name: 'OpenAI',       icon: Brain },
   { name: 'MySQL',        icon: Database },
   { name: 'Express.js',   icon: ServerCog },
-  { name: 'Razorpay',     icon: Zap },
-  { name: 'WordPress',    icon: Globe2 },
+  { name: 'Tailwind',     icon: Paintbrush },
   { name: 'Next.js',      icon: Code2 },
+  { name: 'Gemini AI',    icon: Brain },
+  { name: 'OpenAI',       icon: Brain },
   { name: 'LangChain',    icon: Brain },
   { name: 'Pinecone',     icon: Cpu },
   { name: 'Socket.io',    icon: MessageCircle },
   { name: 'Redis',        icon: Database },
   { name: 'PostgreSQL',   icon: Database },
+  { name: 'Razorpay',     icon: Zap },
   { name: 'JWT / RBAC',   icon: ClipboardCheck },
   { name: 'GSAP',         icon: Zap },
   { name: 'Three.js',     icon: Cpu },
   { name: 'Framer Motion',icon: Rocket },
 ];
 
-// TechStack visual helpers (must live in data.js)
-
 export const techStackDots = {
   'React':          '#61dafb',
   'Node.js':        '#8cc84b',
   'MongoDB':        '#4db33d',
-  'Tailwind':       '#38bdf8',
-  'Gemini AI':      '#4285f4',
-  'OpenAI':         '#412991',
   'MySQL':          '#4479a1',
   'Express.js':     '#666666',
-  'Razorpay':       '#3395ff',
-  'WordPress':      '#21759b',
+  'Tailwind':       '#38bdf8',
   'Next.js':        '#000000',
+  'Gemini AI':      '#4285f4',
+  'OpenAI':         '#412991',
   'LangChain':      '#1c3c3c',
   'Pinecone':       '#0e4bff',
   'Socket.io':      '#010101',
   'Redis':          '#dc382d',
   'PostgreSQL':     '#336791',
+  'Razorpay':       '#3395ff',
   'JWT / RBAC':     '#d63aff',
   'GSAP':           '#88ce02',
   'Three.js':       '#049ef4',

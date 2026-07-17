@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-import { techStackDots, techStackExtras } from '../data';
+import { techStackDots } from '../data';
 
 
 /**
@@ -13,8 +13,7 @@ export default function TechStack({ techStack: techProp }) {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const tech = techProp || [];
 
-  // Build a richer tech item list (merge data + extra items from data.js)
-  const allTech = [...tech, ...techStackExtras];
+  const allTech = tech;
 
 
   // Split into two rows, interleaved
