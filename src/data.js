@@ -201,7 +201,7 @@ export const projects = [
     desc: 'An AI-powered project management platform that auto-generates tasks, assigns priorities and tracks progress.',
     tech: ['MERN', 'OpenAI', 'JWT', 'RBAC', 'Kanban'],
     githubUrl: 'https://github.com/suresh-s/mentormind',
-    liveUrl: 'https://mentormind.vercel.app',
+    liveUrl: 'https://mentormind-v3.vercel.app',
     tags: ['AI', 'SaaS', 'Management'],
   },
   {

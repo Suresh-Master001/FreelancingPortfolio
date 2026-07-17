@@ -27,7 +27,7 @@ const socials = [
 
 const footerLinks = [
   { group: 'Services', links: [
-    { label: 'WordPress Development', href: '#services' },
+    { label: 'API & Backend', href: '#services' },
     { label: 'Full Stack (MERN)',      href: '#services' },
     { label: 'AI Integration',         href: '#services' },
     { label: 'SaaS MVP Build',         href: '#services' },
@@ -98,7 +98,7 @@ export default function Footer({ footer: footerProp }) {
               <ul className="footer-list" role="list">
                 <li className="footer-list-item">
                   <span className="footer-list-bullet" aria-hidden="true">▸</span>
-                  <span>WordPress & WooCommerce Development</span>
+                  <span>API & Backend Development</span>
                 </li>
                 <li className="footer-list-item">
                   <span className="footer-list-bullet" aria-hidden="true">▸</span>
@@ -106,7 +106,7 @@ export default function Footer({ footer: footerProp }) {
                 </li>
                 <li className="footer-list-item">
                   <span className="footer-list-bullet" aria-hidden="true">▸</span>
-                  <span>AI & RAG Integrations</span>
+                  <span>AI Integrations</span>
                 </li>
                 <li className="footer-list-item">
                   <span className="footer-list-bullet" aria-hidden="true">▸</span>

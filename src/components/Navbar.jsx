@@ -51,7 +51,7 @@ export default function Navbar({ personalInfo }) {
           </a>
 
           {/* Desktop links - centered */}
-          <div className="hidden md:flex items-center justify-center flex-1 gap-1" role="list">
+          <div className="hidden md:flex items-center font-display justify-center flex-1 gap-7" role="list">
             {navLinks.map(link => (
               <Link
                 key={link.to}
