@@ -46,12 +46,12 @@ export default function Navbar({ personalInfo }) {
       >
         <div className="navbar-inner">
           {/* Logo */}
-          <a href="#hero" className="footer-logo" aria-label="Codenxte — go to top">
-            <span className="font-display text-2xl font-bold gradient-text">SURESH S</span>
+          <a href="#hero" className="navbar-logo" aria-label="SURESH S — go to top">
+            <span className="font-display text-xl md:text-2xl font-bold gradient-text">SURESH S</span>
           </a>
 
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-6" role="list">
+          {/* Desktop links - centered */}
+          <div className="hidden md:flex items-center justify-center flex-1 gap-1" role="list">
             {navLinks.map(link => (
               <Link
                 key={link.to}
