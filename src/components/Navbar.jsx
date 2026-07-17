@@ -46,11 +46,8 @@ export default function Navbar({ personalInfo }) {
       >
         <div className="navbar-inner">
           {/* Logo */}
-          <a href="#hero" className="navbar-logo" aria-label="Codenxte — go to top">
-            <span className="logo-mark" aria-hidden="true">
-              <span className="logo-dot" />
-            </span>
-            <span className="logo-text font-display">SURESH S</span>
+          <a href="#hero" className="footer-logo" aria-label="Codenxte — go to top">
+            <span className="font-display text-2xl font-bold gradient-text">SURESH S</span>
           </a>
 
           {/* Desktop links */}
