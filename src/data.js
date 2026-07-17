@@ -14,6 +14,7 @@ import {
   TrendingUp,
   Brain,
   Layers,
+  MessageCircle,
 } from 'lucide-react';
 
 export const personalInfo = {
@@ -219,15 +220,26 @@ export const projects = [
 
 // TechStack — main array of technologies with icons
 export const techStack = [
-  { name: 'React',       icon: Code2 },
-  { name: 'Node.js',     icon: ServerCog },
-  { name: 'MongoDB',     icon: Database },
-  { name: 'Tailwind',    icon: Paintbrush },
-  { name: 'Gemini AI',   icon: Brain },
-  { name: 'OpenAI',      icon: Brain },
-  { name: 'MySQL',       icon: Database },
-  { name: 'Express.js',  icon: ServerCog },
-  { name: 'Razorpay',    icon: Zap },
+  { name: 'React',        icon: Code2 },
+  { name: 'Node.js',      icon: ServerCog },
+  { name: 'MongoDB',      icon: Database },
+  { name: 'Tailwind',     icon: Paintbrush },
+  { name: 'Gemini AI',    icon: Brain },
+  { name: 'OpenAI',       icon: Brain },
+  { name: 'MySQL',        icon: Database },
+  { name: 'Express.js',   icon: ServerCog },
+  { name: 'Razorpay',     icon: Zap },
+  { name: 'WordPress',    icon: Globe2 },
+  { name: 'Next.js',      icon: Code2 },
+  { name: 'LangChain',    icon: Brain },
+  { name: 'Pinecone',     icon: Cpu },
+  { name: 'Socket.io',    icon: MessageCircle },
+  { name: 'Redis',        icon: Database },
+  { name: 'PostgreSQL',   icon: Database },
+  { name: 'JWT / RBAC',   icon: ClipboardCheck },
+  { name: 'GSAP',         icon: Zap },
+  { name: 'Three.js',     icon: Cpu },
+  { name: 'Framer Motion',icon: Rocket },
 ];
 
 // TechStack visual helpers (must live in data.js)
@@ -242,15 +254,18 @@ export const techStackDots = {
   'MySQL':          '#4479a1',
   'Express.js':     '#666666',
   'Razorpay':       '#3395ff',
+  'WordPress':      '#21759b',
+  'Next.js':        '#000000',
+  'LangChain':      '#1c3c3c',
+  'Pinecone':       '#0e4bff',
+  'Socket.io':      '#010101',
+  'Redis':          '#dc382d',
+  'PostgreSQL':     '#336791',
+  'JWT / RBAC':     '#d63aff',
+  'GSAP':           '#88ce02',
+  'Three.js':       '#049ef4',
+  'Framer Motion':  '#e535ab',
 };
-
-// Extra tech badges to render in TechStack (must live in data.js)
-// These are added alongside the main techStack array; avoid duplicating names already in techStack.
-export const techStackExtras = [
-  { name: 'Next.js',     icon: null },
-  { name: 'LangChain',   icon: null },
-];
-
 
 export const testimonials = [
   {
