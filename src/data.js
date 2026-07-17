@@ -217,7 +217,21 @@ export const projects = [
   },
 ];
 
+// TechStack — main array of technologies with icons
+export const techStack = [
+  { name: 'React',       icon: Code2 },
+  { name: 'Node.js',     icon: ServerCog },
+  { name: 'MongoDB',     icon: Database },
+  { name: 'Tailwind',    icon: Paintbrush },
+  { name: 'Gemini AI',   icon: Brain },
+  { name: 'OpenAI',      icon: Brain },
+  { name: 'MySQL',       icon: Database },
+  { name: 'Express.js',  icon: ServerCog },
+  { name: 'Razorpay',    icon: Zap },
+];
+
 // TechStack visual helpers (must live in data.js)
+
 export const techStackDots = {
   'React':          '#61dafb',
   'Node.js':        '#8cc84b',
@@ -231,12 +245,10 @@ export const techStackDots = {
 };
 
 // Extra tech badges to render in TechStack (must live in data.js)
+// These are added alongside the main techStack array; avoid duplicating names already in techStack.
 export const techStackExtras = [
-  { name: 'MySQL',       icon: null },
-  { name: 'Express.js',  icon: null },
   { name: 'Next.js',     icon: null },
   { name: 'LangChain',   icon: null },
-  { name: 'Razorpay',    icon: null },
 ];
 
 
